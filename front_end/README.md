@@ -29,7 +29,5 @@ Also has a Drawer to navigate to:
 
 ### Home page views
 
-| :---: | :---: |
-| ![Home Page](/front_end/assets/images/home_page.png "Home page view") | ![Drawer](/front_end/assets/images/drawer.png "Drawer view")|
-
-![HOME PAGE](/front_end/lib/images/img_init.jpg "init image")
+<img src='/front_end/assets/images/home_page.png' alt='Home Page' height='600'>
+<img src='/front_end/assets/images/drawer.png' alt='Drawer' height='600'>
