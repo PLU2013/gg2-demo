@@ -1,16 +1,33 @@
-# greengrocery
+# Greengrocery
 
-A new Flutter project.
+A new Flutter project for purchasing in group.
 
-## Getting Started
+### Warning
 
-This project is a starting point for a Flutter application.
+This project is only a **demo**. Has no other purpose.
 
-A few resources to get you started if this is your first Flutter project:
+This demo is not functional.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Preliminary
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This app is soported in a backend that runs the API services, websocket services and interface with the data base.
+
+The backend will not be covered here.
+
+## Greengrocery HomePage
+
+This page show an users list conformed with a ListView of ListTile widgets.
+
+Also has a Drawer to navigate to:
+
+- User Logout
+- Total Order (to purchasing)
+- Deal out
+- Products Management
+- Reset
+- Exit
+
+### Home page views
+
+| :---: | :---: |
+| ![Home Page](/front_end/assets/images/home_page.png "Home page view") | ![Drawer](/front_end/assets/images/drawer.png "Drawer view")|
