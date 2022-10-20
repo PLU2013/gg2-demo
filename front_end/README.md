@@ -27,10 +27,11 @@ Also has a Drawer to navigate to:
 - Reset
 - Exit
 
+The status online offline is showed though a green dot over the user image and an emoji icon reflects the general status.
+
 ### Home page views
 
 <div display='flex' flex-direction='row'>
-    <img src='/front_end/assets/images/home_page.png' alt='Home Page' height='600'>
-    <div width='100'></div>
-    <img src='/front_end/assets/images/drawer.png' alt='Drawer' height='600'>
+    <img src='/front_end/assets/images/home_page.png' alt='Home Page' height='600' style='margin:0px 50px' >
+    <img src='/front_end/assets/images/drawer.png' alt='Drawer' height='600'  style='margin:0px 50px'>
 </div>
