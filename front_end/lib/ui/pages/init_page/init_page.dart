@@ -24,6 +24,12 @@ class _InitState extends State<Init> {
     initProcess();
   }
 
+  ///Initialization process.
+  ///Gets local user. if null shows the LoginPage.
+  ///Check if purchasing process is initiated. If yes shows the PurchasingPage (buyer_page);
+  ///Init websocket
+  ///Gets users and products
+  ///Show the HomePage.
   initProcess() async {
     setState(() {
       txt = 'Get Local User...';

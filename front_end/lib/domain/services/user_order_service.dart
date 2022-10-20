@@ -3,12 +3,15 @@ import 'package:greengrocery/domain/models/user_order_model.dart';
 import 'package:greengrocery/domain/models/product_model.dart';
 
 class UserOrderService {
+  ///Gets a order list for one user.
+  ///Params [id] => orderId, [productList] => product list to parse final order
   Future<List<UserOrderModel>> getOrderById(String id, List productList) async {
     Map jsonOrder = await Repo().webSocket.getOrderById(id);
-    return parseFinalOrder(jsonOrder, productList);
+    return _parseFinalOrder(jsonOrder, productList);
   }
 
-  List<UserOrderModel> parseFinalOrder(Map jsonOrder, List productList) {
+  ///Create the order to show in the user page
+  List<UserOrderModel> _parseFinalOrder(Map jsonOrder, List productList) {
     List<UserOrderModel> finalOrder = [];
     if (jsonOrder['message'] == 'NO CONTENT') return finalOrder;
     List rawOrder = jsonOrder['listOrder'];
@@ -30,6 +33,8 @@ class UserOrderService {
     return finalOrder;
   }
 
+  ///Save an order in the server
+  ///Params [order] the edited user order, [orderId] order id.
   Future<bool> putOrderById(List<UserOrderModel> order, String orderId) async {
     List rawOrder = [];
     for (UserOrderModel e in order) {

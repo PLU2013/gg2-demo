@@ -4,6 +4,8 @@ import 'package:greengrocery/domain/models/user_model.dart';
 import 'package:greengrocery/ui/pages/commons/imgs_class.dart';
 
 class UsersService {
+  ///Gets users list from server (API)
+  ///Uses [useLogged] to conform the [UserModel].
   Future<List<UserModel>> getUsersApi(String userLogged) async {
     List<UserModel> usersList = [];
     List apiResponse = await HttpApi(path: 'users').get();
@@ -18,14 +20,20 @@ class UsersService {
     return usersList;
   }
 
+  ///Sets the user order as ready (WebSocket)
+  ///[data2Send] is a Map like this {"idUser": user.id, "orderReady": value}
+  ///This command triggers a broadcast socket message to all online users
+  ///to update theirs ui.
   Future setOrderReady(Map<String, dynamic> data2Send) async {
     return await Repo().webSocket.setOrderReady(data2Send);
   }
 
-  clearAllOrderReady() async {
+  ///Clears all users orrder ready field (API)
+  Future<bool> clearAllOrderReady() async {
     return await HttpApi(path: 'users/clearAllOrderReady').put(body: {});
   }
 
+  ///Gets a list of user's IDs and names as JSON (API)
   Future<List<UserModel>> getUsersList() async {
     List<UserModel> usersList = [];
     List response = await HttpApi(path: 'users/nameUser').get();
@@ -38,6 +46,8 @@ class UsersService {
     return usersList;
   }
 
+  ///Sets the indicated field [fieldToChange]
+  ///NOT USED
   setUserField(UserModel user, String fieldToChange) {
     Map<String, dynamic> userMap = user.toMap();
     Map<String, dynamic> body = {fieldToChange: userMap[fieldToChange]};
@@ -47,7 +57,10 @@ class UsersService {
         : false;
   }
 
-  sendBroadcast(
+  ///Sends broadcast message via websocket
+  ///[from] user name ?? unknown
+  ///[to] user name ?? all
+  Future<bool> sendBroadcast(
       {required String from, String? to, required String message}) async {
     Map<String, dynamic> body = {'from': from, 'to': to, 'message': message};
     return await HttpApi(path: 'users/broadcast').post2(body);

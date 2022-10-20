@@ -2,6 +2,7 @@ import 'package:greengrocery/domain/services/http_api.dart';
 import 'package:greengrocery/domain/models/product_model.dart';
 
 class ProductsService {
+  ///Gets a list of available products (API).
   Future<List<ProductModel>> getProductsApi() async {
     List response = await HttpApi(path: 'products').get();
     List<ProductModel> productsList = [];
@@ -17,6 +18,8 @@ class ProductsService {
     return productsList;
   }
 
+  ///Updates the local current value field to the same field in the server.
+  ///Params [product] ProductModel, [fieldtoChange] field name to update.
   Future<bool> putProductField(
       ProductModel product, String fieldtoChange) async {
     Map<String, dynamic> productMap = product.toMap();
@@ -28,11 +31,15 @@ class ProductsService {
         : false;
   }
 
+  ///Create new product in the server
+  ///Params [product] as ProductModel.
   Future<bool> newProduct(ProductModel product) async {
     Map<String, dynamic> body = product.toMap();
     return await HttpApi(path: 'products/new').put(body: body);
   }
 
+  ///Delete product from server
+  ///Delete a product by [productId]
   Future<bool> deleteProduct(int productId) async =>
       await HttpApi(path: 'products/delete', id: productId.toString()).delete();
 

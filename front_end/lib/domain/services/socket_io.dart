@@ -6,10 +6,6 @@ import 'package:greengrocery/domain/models/user_model.dart';
 import 'package:greengrocery/domain/services/local_env.dart';
 import 'package:socket_io_client/socket_io_client.dart';
 
-//const webSocketServer = 'https://greengrocery.onrender.com';
-//'https://greengrocery-backend.herokuapp.com';
-//const webSocketServer = 'http://localhost:3000';
-
 class Ws {
   static late Socket _socket;
   static bool _socketInitOk = false;

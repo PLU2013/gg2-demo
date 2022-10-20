@@ -7,7 +7,6 @@ final Map env = LocalEnv.data;
 
 class HttpApi {
   static final String _baseUrl = '${env['SERVER_URL']}/api/';
-  //'https://greengrocery-backend.herokuapp.com/api/';
   String path;
   String? id;
   String url;

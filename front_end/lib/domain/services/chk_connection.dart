@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 
 class InternetConnection {
+  ///Check internet connection
   Future<bool> check() async {
     try {
       final List<InternetAddress> res =
