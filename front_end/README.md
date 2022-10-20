@@ -31,3 +31,5 @@ Also has a Drawer to navigate to:
 
 | :---: | :---: |
 | ![Home Page](/front_end/assets/images/home_page.png "Home page view") | ![Drawer](/front_end/assets/images/drawer.png "Drawer view")|
+
+![HOME PAGE](/front_end/lib/images/img_init.jpg "init image")
