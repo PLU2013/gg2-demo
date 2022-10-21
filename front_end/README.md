@@ -67,6 +67,8 @@ This page is only used for the purchaser or admin user. It's the shopping list. 
 
 Here, the buyer can mark each product purchased, can edit the product price and priority.
 
+The product page works offline. After the start of the purchase, all orders are saved on the local storage. This is done to avoid connectivity conflics in stores. Later, if the connectivity is good, the changes are updated on the server.
+
 > The priority number defines the purchasing priority according the buyer's preferences. 
 >> This value can also be edited in the product management page.
 
@@ -90,3 +92,16 @@ All the changes are saved on the server.
 ### Products management page view
 
 <img src='/front_end/assets/images/products_management_page.png' alt='Products Management Page' height='500' style='margin:0px 20px' >
+
+---
+
+## Distribution page.
+
+This page is only used for the buyer or admin user.
+
+Here is a support to manage the distibution of products.
+It's a distribution list where display each user and theirs order.
+
+### Distribution page view
+
+<img src='/front_end/assets/images/distribution_page.png' alt='Distribution Page' height='500' style='margin:0px 20px' >
